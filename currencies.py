@@ -84,3 +84,8 @@ def main():
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+    df = pd.DataFrame(products)
+
+    df["conversion_time"] = timestamp
+
+
