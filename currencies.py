@@ -88,4 +88,10 @@ def main():
 
     df["conversion_time"] = timestamp
 
+    df.columns = [
+        "Book Title",
+        f"Price ({base_currency})",
+        f"Price ({target_currency})",
+        "Conversion Time"
+    ]
 
