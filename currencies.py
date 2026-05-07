@@ -105,3 +105,17 @@ def main():
 
     print(f"\nData saved to {csv_filename}")
 
+    plt.figure(figsize=(12, 6))
+
+    plt.bar(df["Book Title"], df[f"Price ({base_currency})"])
+
+    plt.xticks(rotation=75)
+
+    plt.xlabel("Books")
+    plt.ylabel(f"Price ({base_currency})")
+    plt.title("Original Book Prices")
+
+    plt.tight_layout()
+
+    plt.show()
+
