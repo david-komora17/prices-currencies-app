@@ -82,4 +82,5 @@ def main():
 
         product["converted_price"] = round(converted_price, 2)
 
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
