@@ -56,3 +56,14 @@ def get_exchange_rate(base_currency="GBP", target_currency="KES"):
         print("Currency not found.")
         return None
 
+
+def main():
+
+    print("Scraping products...")
+
+    products = scrape_books()
+
+    if not products:
+        print("No products found.")
+        return
+
