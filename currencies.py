@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
+import re
 
 def scrape_books():
     url = "https://books.toscrape.com/"
@@ -26,8 +27,11 @@ def scrape_books():
         price_text = book.find("p", class_="price_color").text
 
         # Remove currency symbol (£)
-        price_gbp = float(price_text.replace("£", ""))
-
+        price_gbp = float(
+            price_text.replace("£", "")
+                    .replace("Â", "")
+                    .strip()
+        )
         product_data.append({
             "title": title,
             "price_gbp": price_gbp
