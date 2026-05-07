@@ -67,3 +67,14 @@ def main():
         print("No products found.")
         return
 
+    base_currency = input("Enter base currency (default GBP): ").upper() or "GBP"
+    target_currency = input("Enter target currency (default KES): ").upper() or "KES"
+
+
+    print(f"Getting exchange rate from {base_currency} to {target_currency}...")
+
+    exchange_rate = get_exchange_rate(base_currency, target_currency)
+
+    if exchange_rate is None:
+        return
+
