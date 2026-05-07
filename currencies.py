@@ -33,3 +33,26 @@ def scrape_books():
             "price_gbp": price_gbp
         })
     return product_data
+
+
+def get_exchange_rate(base_currency="GBP", target_currency="KES"):
+
+    api_url = f"https://open.er-api.com/v6/latest/{base_currency}"
+
+    try:
+        response = requests.get(api_url, timeout=10)
+        response.raise_for_status()
+
+        data = response.json()
+
+        rate = data["rates"][target_currency]
+
+        return rate
+    except requests.exceptions.RequestException as e:
+        print(f"API Connection Error: {e}")
+        return None
+
+    except KeyError:
+        print("Currency not found.")
+        return None
+
