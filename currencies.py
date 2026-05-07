@@ -99,3 +99,9 @@ def main():
 
     print(df.to_string(index=False))
 
+    csv_filename = "converted_book_prices.csv"
+
+    df.to_csv(csv_filename, index=False)
+
+    print(f"\nData saved to {csv_filename}")
+
