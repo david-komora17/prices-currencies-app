@@ -77,4 +77,9 @@ def main():
 
     if exchange_rate is None:
         return
+    for product in products:
+        converted_price = product["price_gbp"] * exchange_rate
+
+        product["converted_price"] = round(converted_price, 2)
+
 
