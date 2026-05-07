@@ -95,3 +95,7 @@ def main():
         "Conversion Time"
     ]
 
+    print("\nConverted Prices:\n")
+
+    print(df.to_string(index=False))
+
